@@ -11,7 +11,7 @@
  -  add
   `  "build": "\"webpack --mode production\"",
              "start": "\"webpack-dev-server --mode development\""` 
-             to scripts in readme
+             to scripts in package.json
  - create src dir and create index.html
  -  add 
  `<!DOCTYPE html>
@@ -21,7 +21,7 @@
                  </head> 
              <body>
                  <div id="root"></div>
-                 <script src="./dist/bundle.js"></script> 
+                
              </body>
              </html>`
               to html file
@@ -78,7 +78,7 @@ npm install html-webpack-plugin -D
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-plugins: [    new HtmlWebpackPlugin({      template: path.resolve('./index.html'),    }),  ]
+plugins: [    new HtmlWebpackPlugin({      template: path.resolve('./public/index.html'),    }),  ]
 ```
 
 - remove script tag in your index.html file
@@ -88,5 +88,56 @@ plugins: [    new HtmlWebpackPlugin({      template: path.resolve('./index.html'
 node_modules
 dist
 `
+- final content in webpack.config.js file
 
-### Step 3 create App.js in the src folder
+`
+
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+
+module.exports = {
+    entry: './src/index.js',
+    output: {
+        path: __dirname + '/dist',
+        publicPath: '/',
+        filename: 'bundle.js'
+    },
+    devServer: {
+        contentBase: './dist',
+    },  module: {
+        rules: [
+                {
+                    test: /\.(js|jsx)$/,
+                    exclude: /node_modules/,
+                    use: ['babel-loader']
+                },
+                {
+                    test : /\.css$/, use:['style-loader', 'css-loader']
+                }
+                ]
+    },
+    mode:"development",
+    plugins:
+        [
+            new HtmlWebpackPlugin({      template: path.resolve('./public/index.html'),    }),
+        ]
+};
+`
+- npm run create  creates the dist dir
+
+
+### Step 3 create App.js in the src folder for testing 
+
+`
+import React from 'react'
+import './App.css'
+export default function App() {
+    return (
+        <div>
+            <h2 className="name">Funbi</h2>
+        </div>
+    )
+}
+
+`

@@ -23,8 +23,9 @@ module.exports = {
                 }
                 ]
     },
+    mode:"development",
     plugins:
         [
-            new HtmlWebpackPlugin({      template: path.resolve('./src/index.html'),    }),
+            new HtmlWebpackPlugin({      template: path.resolve('./public/index.html'),    }),
         ]
 };

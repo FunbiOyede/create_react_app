@@ -3,7 +3,7 @@ import './App.css'
 export default function App() {
     return (
         <div>
-            <h2 className="name">Craze</h2>
+            <h2 className="name">Create react app </h2>
         </div>
     )
 }

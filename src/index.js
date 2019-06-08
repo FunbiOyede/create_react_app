@@ -1,13 +1,10 @@
 import React, { Component} from 'react';
 import ReactDOM from 'react-dom';
-import App from './App.jsx';
+import App from './container/App.jsx';
 
-class Hello extends Component{
-    render(){
-        return(
-           <App />
-        )
-    }
+
+ReactDOM.render(<App />, document.getElementById("root"));
+
+if(module.hot()){
+    module.hot.reload();
 }
-
-ReactDOM.render(<Hello />, document.getElementById("root"));
