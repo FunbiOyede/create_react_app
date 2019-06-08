@@ -129,7 +129,7 @@ module.exports = {
 
 ### Step 3 create App.js in the src folder for testing 
 
-`
+```
 import React from 'react'
 import './App.css'
 export default function App() {
@@ -140,7 +140,7 @@ export default function App() {
     )
 }
 
-`
+```
 
 ## Source 
 [create-react-project-without-create-react-app](https://dev.to/vish448/create-react-project-without-create-react-app-3goh)
