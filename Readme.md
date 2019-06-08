@@ -141,3 +141,6 @@ export default function App() {
 }
 
 `
+
+## Source 
+[create-react-project-without-create-react-app](https://dev.to/vish448/create-react-project-without-create-react-app-3goh)
