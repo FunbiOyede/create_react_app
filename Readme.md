@@ -12,7 +12,7 @@
   `  "build": "\"webpack --mode production\"",
              "start": "\"webpack-dev-server --mode development\""` 
              to scripts in package.json
- - create src dir and create index.html
+ - create public dir and create index.html
  -  add 
  `<!DOCTYPE html>
              <html>
@@ -25,7 +25,7 @@
              </body>
              </html>`
               to html file
- - create an index.js file in src dir and write 
+ - create a src dir and index.js file  and write 
  ```
    import ReactDOM from 'react-dom';
                                                    
