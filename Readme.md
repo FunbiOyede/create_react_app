@@ -90,8 +90,7 @@ dist
 `
 - final content in webpack.config.js file
 
-`
-
+```
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -123,7 +122,7 @@ module.exports = {
             new HtmlWebpackPlugin({      template: path.resolve('./public/index.html'),    }),
         ]
 };
-`
+```
 - npm run create  creates the dist dir
 
 
